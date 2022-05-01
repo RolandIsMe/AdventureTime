@@ -31,11 +31,6 @@ class Base_Character:
             self.crit_chance = 0.15
             self.crit_hit = 150
             
-    #Monster       
-    # super().__init__
-    # Test
-        
-            
 def select_class(user_selection):
     user_class = PlayerClass_Dict.get(user_selection)
     playerclass = None
