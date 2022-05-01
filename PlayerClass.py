@@ -1,7 +1,6 @@
 import sys
 
 #Hello
-
 class Base_Character:
     def __init__(self, name, weapon, hp=100, defense=100, damage=5, parry=0, block=0, dodge=0, crit_chance=0, crit_hit=120):
         self.name = name
@@ -31,6 +30,10 @@ class Base_Character:
             self.dodge = 0.15
             self.crit_chance = 0.15
             self.crit_hit = 150
+            
+    #Monster       
+    # super().__init__
+        
             
 def select_class(user_selection):
     user_class = PlayerClass_Dict.get(user_selection)
