@@ -33,6 +33,7 @@ class Base_Character:
             
     #Monster       
     # super().__init__
+    # Test
         
             
 def select_class(user_selection):
