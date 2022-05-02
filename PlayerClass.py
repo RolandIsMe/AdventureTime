@@ -1,6 +1,4 @@
 import sys
-
-#Hello
 class Base_Character:
     def __init__(self, name, weapon, hp=100, defense=100, damage=5, parry=0, block=0, dodge=0, crit_chance=0, crit_hit=120):
         self.name = name
@@ -30,10 +28,16 @@ class Base_Character:
             self.dodge = 0.15
             self.crit_chance = 0.15
             self.crit_hit = 150
-       #elif self.name == "New Class":
-            #self.hp = x
-            #self.defense = x
-        
+        #elif self.name == "New Class":
+class Base_Stats(Base_Character):
+    def __init__(self, name, weapon, PWR=5, AGI=5, VIT=5, DEX=5, LUK=5):
+        super().__init__(name, weapon, hp=100, defense=50, damage=5, dodge=2, crit_chance=10, crit_hit=120)
+        self.PWR = PWR
+        self.AGI = AGI
+        self.VIT = VIT
+        self.DEX = DEX
+        self.LUK = LUK
+     
         #Create function to Attack - return damage after modifying
         #Create function to check HP - check if self.hp = 0
         #Create function to modify HP - result from attack function & modifying self.hp 
@@ -73,4 +77,3 @@ sys.stdout.write("\nYou're now a: "+(selected_class.name)+
                  "\nCrit Chance: "+str(int(selected_class.crit_chance*100))+"%"
                  "\nCrit Damage: "+str(selected_class.crit_hit)+"%"
                  "\n===========================================")
-#Test
