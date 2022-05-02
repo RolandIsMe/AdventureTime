@@ -30,7 +30,15 @@ class Base_Character:
             self.dodge = 0.15
             self.crit_chance = 0.15
             self.crit_hit = 150
-            
+       #elif self.name == "New Class":
+            #self.hp = x
+            #self.defense = x
+        
+        #Create function to Attack - return damage after modifying
+        #Create function to check HP - check if self.hp = 0
+        #Create function to modify HP - result from attack function & modifying self.hp 
+        #Create Monster Class
+               
 def select_class(user_selection):
     user_class = PlayerClass_Dict.get(user_selection)
     playerclass = None
@@ -65,3 +73,4 @@ sys.stdout.write("\nYou're now a: "+(selected_class.name)+
                  "\nCrit Chance: "+str(int(selected_class.crit_chance*100))+"%"
                  "\nCrit Damage: "+str(selected_class.crit_hit)+"%"
                  "\n===========================================")
+#Test
