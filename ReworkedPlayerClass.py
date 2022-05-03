@@ -1,6 +1,6 @@
 import sys
 
-class Base_Character:
+class Base_Character():
     def __init__(self, name, weapon, hp=100, defense=50, damage=5, dodge=2, crit_chance=10, crit_hit=120):
         self.name = name
         self.weapon = weapon
@@ -10,30 +10,22 @@ class Base_Character:
         self.dodge = dodge
         self.crit_chance = crit_chance
         self.crit_hit = crit_hit
-class Base_Stats(Base_Character):
-    def __init__(self, name, weapon, PWR=5, AGI=5, VIT=5, DEX=5, LUK=5):
-        super().__init__(name, weapon, hp=100, defense=50, damage=5, dodge=2, crit_chance=10, crit_hit=120)
-        self.PWR = PWR
-        self.AGI = AGI
-        self.VIT = VIT
-        self.DEX = DEX
-        self.LUK = LUK 
 
-def modify_class_stats(self):
-    if self.name == "Knight":
-        self.hp = 110
-        self.defense = 70
-        self.damage = 10
-    elif self.name == "Guardian":
-        self.hp = 220
-        self.defense = 100
-        self.damage = 3
-    elif self.name == "Hunter":
-        self.hp = 60
-        self.defense = 20
-        self.dodge = 0.15
-        self.crit_chance = 0.15
-        self.crit_hit = 150
+    def modify_class_stats(self):
+        if self.name == "Knight":
+            self.hp = 110
+            self.defense = 70
+            self.damage = 10
+        elif self.name == "Guardian":
+            self.hp = 220
+            self.defense = 100
+            self.damage = 3
+        elif self.name == "Hunter":
+            self.hp = 60
+            self.defense = 20
+            self.dodge = 0.15
+            self.crit_chance = 0.15
+            self.crit_hit = 150
             
 def select_class(user_selection):
     user_class = PlayerClass_Dict.get(user_selection)
@@ -72,8 +64,8 @@ sys.stdout.write("\nYou're now a: "+(selected_class.name)+
 # DEX = Hit chance
 # LUK = LUK + Critical chance / 2.5
 
-# Player = Base_Stats("Roland", "Sword", 5, 5, 5, 5, 5) 
-# sys.stdout.write("Your Damage is: " +str(Player.PWR*Player.damage*0.25)+"\n") #Damage test
+#Player = Base_Stats ("Roland", "Sword", 5, 5, 5, 5, 5)
+#sys.stdout.write("Your Damage is: " +str(Player.PWR*Player.damage*0.25)+"\n") #Damage test
 # sys.stdout.write("Your Dodge rate is: "+str(Player.AGI/Player.dodge)+"\n") #Dodge test
 # sys.stdout.write("Your HP is: "+str(Player.hp+Player.VIT*1.5)+"\n") #HP test
 # sys.stdout.write("Your Defense is: "+str(Player.defense+Player.VIT*0.5)+"\n")#Defense test
