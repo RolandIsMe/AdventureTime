@@ -68,6 +68,10 @@ class Base_Character:
         return self.luk
     def get_luk(self, luk):
         self.luk = luk
+        
+    def get_crit_percentage(self):
+        return str(int(self.get_crit_chance()*100))+"%"
+        
 
     def set_class_stats(self):
         if self.name == "Knight":
@@ -100,7 +104,7 @@ class Base_Character:
         #Create function to Attack - return damage after modifying
         #Create function to check HP - check if self.hp = 0
         #Create function to modify HP - result from attack function & modifying self.hp 
-        #Create Monster Class
+        #Create Monster Class 
 
 def select_class(user_selection): #parameter user selection is a number of string type
     user_class = PlayerClass_Dict.get(user_selection) #gets class name from PlayerClass_Dict base on user input
@@ -126,10 +130,10 @@ pick_class = sys.stdin.readline().rstrip() #.rstrip because of invisible new lin
 selected_class = select_class(pick_class) #Passes user input to select_class
 sys.stdout.write("\nYou're now a: "+(selected_class.get_name())+
                  "\n==========Here are your new stats==========\n" 
-                 "HP: "+str(selected_class.hp)+ 
-                 "\nDefense: "+str(selected_class.defense)+ 
-                 "\nDamage: "+str(selected_class.damage)+
-                 "\nDodge: "+str(int(selected_class.dodge*100))+"%"
-                 "\nCrit Chance: "+str(int(selected_class.crit_chance*100))+"%"
-                 "\nCrit Damage: "+str(selected_class.crit_hit)+"%"
+                 "HP: "+str(selected_class.get_hp())+ 
+                 "\nDefense: "+str(selected_class.get_defense())+ 
+                 "\nDamage: "+str(selected_class.get_damage())+
+                 "\nDodge: "+str(int(selected_class.get_dodge()*100))+"%"
+                 "\nCrit Chance: "+selected_class.get_crit_percentage()+
+                 "\nCrit Damage: "+str(selected_class.get_crit_hit())+"%"
                  "\n===========================================")
